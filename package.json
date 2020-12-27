@@ -1,0 +1,61 @@
+{
+ "name": "fp-life",
+ "version": "0.1.0",
+ "description": "FP implementation of Conway's Game of Life",
+ "main": "dist/index.js",
+ "module": "dist/index.module.js",
+ "source": "index.js",
+ "keywords": [
+  "fp",
+  "life",
+  "game of life",
+  "conway",
+  "functional programming",
+  "sanctuary"
+ ],
+ "author": "Chris Zhou <chrisrzhou@pm.me>",
+ "license": "MIT",
+ "repository": "https://github.com/chrisrzhou/fp-life.git",
+ "bugs": "https://github.com/chrisrzhou/fp-life/issues",
+ "scripts": {
+  "clean:build": "rm -rf dist",
+  "build": "microbundle build",
+  "lint": "xo --fix",
+  "test": "jest --watch",
+  "test:ci": "jest"
+ },
+ "dependencies": {
+  "sanctuary": "^3.1.0"
+ },
+ "devDependencies": {
+  "@babel/core": "^7.8.7",
+  "@babel/preset-env": "^7.9.5",
+  "babel-jest": "^26.0.1",
+  "husky": "^4.2.5",
+  "jest": "^26.0.1",
+  "microbundle": "^0.13.0",
+  "xo": "^0.36.1"
+ },
+ "husky": {
+  "hooks": {
+   "pre-push": "npm run lint && npm run test:ci"
+  }
+ },
+ "prettier": {
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true,
+  "trailingComma": "all",
+  "useTabs": false
+ },
+ "xo": {
+  "env": [
+   "browser",
+   "jest"
+  ],
+  "prettier": true,
+  "rules": {
+    "new-cap": "off",
+    "unicorn/no-fn-reference-in-iterator": "off"
+  }
+ }
+}
